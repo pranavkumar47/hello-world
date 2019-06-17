@@ -11,7 +11,6 @@ pipeline {
           
                 rtMavenDeployer (
                     id: "MAVEN_DEPLOYER",
-                    serverId: "ARTIFACTORY_SERVER",
                     releaseRepo: "libs-release-local",
                     snapshotRepo: "libs-snapshot-local"
                 )
@@ -23,7 +22,7 @@ pipeline {
             steps {
                 rtMavenRun (
                     tool: MAVEN_TOOL, // Tool name from Jenkins configuration
-                    pom: 'maven-example/pom.xml',
+                    pom: 'hello-world/pom.xml',
                     goals: 'clean install',
                     deployerId: "MAVEN_DEPLOYER",
   
