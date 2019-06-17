@@ -15,7 +15,6 @@ pipeline {
                     snapshotRepo: "libs-snapshot-local"
                 )
 
-              }
         }
 
         stage ('Exec Maven') {
@@ -29,9 +28,6 @@ pipeline {
                 )
             }
         }
-
-                
-            }
-        }
     }
 }
+        
