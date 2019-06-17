@@ -2,9 +2,10 @@ node {
         stage ('Clone') {
                git branch: 'master', url: "https://github.com/pranavkumar47/hello-world.git"
         }
-        stage ('Exec Maven') {
-                   sh 'mvn -B clean package'
-        }                              
+        def mvnHome = tool 'M3'
+        sh "${mvnHome}/bin/mvn -B verify"
+       
+                                      
  }
   
             
