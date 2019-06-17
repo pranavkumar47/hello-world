@@ -8,8 +8,7 @@ pipeline {
         }
                   stage ('Exec Maven') {
                    
-                    pom: 'hello-world/pom.xml',
-                    goals: 'clean install',
+                   sh 'mvn -B clean package' 
                                  
                         }
     }
