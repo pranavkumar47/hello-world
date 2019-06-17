@@ -16,13 +16,7 @@ pipeline {
                     snapshotRepo: "libs-snapshot-local"
                 )
 
-                rtMavenResolver (
-                    id: "MAVEN_RESOLVER",
-                    serverId: "ARTIFACTORY_SERVER",
-                    releaseRepo: "libs-release",
-                    snapshotRepo: "libs-snapshot"
-                )
-            }
+              }
         }
 
         stage ('Exec Maven') {
@@ -32,7 +26,7 @@ pipeline {
                     pom: 'maven-example/pom.xml',
                     goals: 'clean install',
                     deployerId: "MAVEN_DEPLOYER",
-                    resolverId: "MAVEN_RESOLVER"
+  
                 )
             }
         }
