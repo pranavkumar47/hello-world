@@ -7,14 +7,11 @@ pipeline {
             }
         }
                   stage ('Exec Maven') {
-            steps {
-                rtMavenRun (
+                   
                     pom: 'hello-world/pom.xml',
                     goals: 'clean install',
-                    
-                )
-            }
-                  }
+                                 
+                        }
     }
 }
   
